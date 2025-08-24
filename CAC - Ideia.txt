@@ -1,0 +1,79 @@
+==========================
+CÓDIGO DE AUTENTICAÇÃO COMERCIAL (CAC-EVO)
+==========================
+
+OBJETIVO:
+Garantir segurança, autenticidade e rastreabilidade dos contatos comerciais feitos por membros autorizados da Evogenêse.
+
+--------------------------
+1. FORMATO DO CÓDIGO:
+--------------------------
+EVO-[SIGLA_MEMBRO]-[ID_CLIENTE]-[HASH]
+
+Exemplo: EVO-JSL043-KF
+- EVO = Prefixo institucional fixo
+- JSL = Sigla do membro (ex: João Sollatori)
+- 043 = Número ou ID do cliente/projeto
+- KF = Hash de controle (data/semana/validação)
+
+--------------------------
+2. FLUXO DE USO:
+--------------------------
+
+1. O membro autorizado acessa o painel da Evogenêse.
+2. Seleciona:
+   - Cliente / Lead
+   - Projeto vinculado
+3. Clica em "GERAR CAC"
+4. O sistema gera o CAC e:
+   - Registra no banco de dados
+   - Atualiza na página de acesso do cliente
+5. O membro entra em contato com o cliente e informa:
+
+   "Olá, sou [NOME] da Evogenêse.
+    Para sua segurança, este é o meu Código de Autenticação Comercial:
+    EVO-JSL043-KF.
+    Você pode validá-lo em evogenese.com/seguranca/validar"
+
+6. O cliente acessa a aba de validação, insere o CAC e recebe a resposta:
+
+   a) ✅ CÓDIGO VÁLIDO
+      - Nome do membro
+      - Projeto vinculado
+      - Status: Autêntico
+
+   b) ⚠️ CÓDIGO INVÁLIDO/EXPIRADO
+      - Mensagem de alerta + instruções
+
+   c) ❌ CÓDIGO FRAUDULENTO
+      - Alerta grave + botão de denúncia
+
+--------------------------
+3. CAMADA TÉCNICA (resumo)
+--------------------------
+- Painel interno para geração
+- Banco de dados para registro
+- Página pública de validação
+- Expiração automática (opcional)
+- Log de uso e histórico
+
+--------------------------
+4. BOAS PRÁTICAS:
+--------------------------
+- Todo contato deve ser iniciado COM o CAC.
+- O CAC deve ser único por cliente e tempo limitado.
+- Nunca reutilizar CACs antigos.
+- CACs devem ser incluídos em propostas e contratos.
+
+--------------------------
+5. SUGESTÕES FUTURAS:
+--------------------------
+- CAC com QR Code
+- Notificações por e-mail/SMS após validação
+- Integração com WhatsApp
+
+==========================
+DOCUMENTO BASE - EVOGENÊSE
+Versão: 1.0
+Data: 2025-08-07
+==========================
